@@ -20,6 +20,7 @@ $tasks = [
     "due" => "Tomorrow",
     "assigned_to" => "El menetz",
     "completed" => false,
+    "delayed" => true
 
 ];
 

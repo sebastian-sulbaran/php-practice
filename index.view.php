@@ -65,7 +65,24 @@
         </li>
         
         <li>
+            <!-- ternary operator -->
             <strong>Status</strong>: <?= $tasks['completed'] ? 'Completed': 'Imcompleted' ?>
+        </li>
+
+        <li>
+            <!-- regular conditional (shortcut) -->
+            <strong>Delayed</strong>: 
+    
+            <?php if ($tasks["delayed"]) : ?>
+
+                <span class="icon">&#9992;</span>
+                
+                <?php else: ?>
+                    
+                    <span class="icon">&#10060;</span>
+        
+            <?php endif ?>
+
         </li>
         
     </ul>
