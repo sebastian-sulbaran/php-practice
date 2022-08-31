@@ -86,5 +86,10 @@
         </li>
         
     </ul>
+    <h2>Can you enter night clubs?</h2>
+    <span>
+        <?=checkEntryAge($age) ? "You can access the night club." : "You can't access the night club." ?>
+    </span>
+
 </body>
 </html>

@@ -1,5 +1,7 @@
 <?php
 
+require("functions.php");
+
 $greetings = "Hello you, " . (htmlspecialchars($_GET['name']) ? htmlspecialchars($_GET['name']) : "user");
 
 //trabajando con arreglos
@@ -28,6 +30,9 @@ $tasks = [
 
 $tasks['description'] = "Go and buy some fruits";
 
+$age = 31;
+
+// dd($age); // function from external file
 /*
 if we want to print a structured data we can use var_dump() function. We can also use <pre></pre> tags to give it format
 */
