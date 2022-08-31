@@ -36,5 +36,13 @@
             }
         ?>
     </ul>
+
+    <h2>Todo list:</h2>
+    <ul>
+        <?php foreach ($tasks as $task => $value):?>
+            <li><strong><?= $task ?></strong> : <?= $value ?></li>
+        <?php endforeach?>
+        
+    </ul>
 </body>
 </html>
