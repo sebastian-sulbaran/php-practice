@@ -39,9 +39,34 @@
 
     <h2>Todo list:</h2>
     <ul>
-        <?php foreach ($tasks as $task => $value):?>
-            <li><strong><?= $task ?></strong> : <?= $value ?></li>
+        <?php foreach ($tasks as $heading => $value):?>
+            <li><strong><?= ucwords($heading) ?></strong> : <?= $value ?></li>
         <?php endforeach?>
+        
+    </ul>
+    <h2>Todo list (with more control in code):</h2>
+    <!-- de esta forma se tiene mas control sobre lo que se quiere mostrar, por ejemplo colocando cosas que estan desordenadas en el array de forma ordenada y con los label que queremos -->
+    <ul>
+        
+        <li>
+            <strong>Name</strong>: <?= $tasks['title'] ?>
+        </li>
+        
+        <li>
+            <strong>Description</strong>: <?= $tasks['description'] ?>
+        </li>
+        
+        <li>
+            <strong>Due date</strong>: <?= $tasks['due'] ?>
+        </li>
+        
+        <li>
+            <strong>Responsible person</strong>: <?= $tasks['assigned_to'] ?>
+        </li>
+        
+        <li>
+            <strong>Status</strong>: <?= $tasks['completed'] ? 'Completed': 'Imcompleted' ?>
+        </li>
         
     </ul>
 </body>

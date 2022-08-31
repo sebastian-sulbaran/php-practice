@@ -19,7 +19,7 @@ $tasks = [
     "title" => "Go to the market",
     "due" => "Tomorrow",
     "assigned_to" => "El menetz",
-    "completed" => "yes",
+    "completed" => false,
 
 ];
 
