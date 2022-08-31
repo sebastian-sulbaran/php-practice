@@ -1,9 +1,16 @@
 <?php
 
-//separacion de responsabilidades, esto es un controlador y se llama a una "vista"
-// en el controlador, se establecen las propiedades que necesita la view
+$greetings = "Hello you, " . (htmlspecialchars($_GET['name']) ? htmlspecialchars($_GET['name']) : "user");
 
-$greetings = "Hello you ! " . (htmlspecialchars($_GET['name']) ? htmlspecialchars($_GET['name']) : "user");
+//trabajando con arreglos
 
+$animals = [
+    'Dog',
+    'Cat',
+    'Guanaco',
+    'Beaver',
+    'Condor'
+];
 
+//import the view file
 require("index.view.php");
