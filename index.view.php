@@ -91,5 +91,26 @@
         <?=checkEntryAge($age) ? "You can access the night club." : "You can't access the night club." ?>
     </span>
 
+    <h2>List of task:</h2>
+    <ul>
+        <?php foreach($todo_list as $task): ?>
+        
+            <?php if ($task->isCompleted()): ?>
+                <strike>
+                    <li>
+                        <?= $task->description() ?>
+                    </li>
+                </strike>
+            <?php else: ?>
+                <li>
+                    <?= $task->description() ?>
+                </li>
+            <?php endif ?>
+            
+        
+        <?php endforeach ?>
+
+    </ul>
+
 </body>
 </html>
