@@ -1,7 +1,7 @@
 <?php
 
 require("functions.php");
-
+require("Task.php");
 $greetings = "Hello you, " . (htmlspecialchars($_GET['name']) ? htmlspecialchars($_GET['name']) : "user");
 
 //trabajando con arreglos
@@ -39,35 +39,7 @@ if we want to print a structured data we can use var_dump() function. We can als
 
 //creating a class
 
-class Task {
-    // we can obtain properties to our class from the tables and its columns
-    protected $description;
-    protected $completed = false;
-
-    //the constructor function will be excecuted always when a new instance is called, we can pass parameters
-    public function __construct($description)
-    {
-        $this->description = $description;
-    }
-
-    //implementing getters and setters
-    public function complete()
-    {
-        $this->completed = true;
-    }
-
-    public function isCompleted()
-    {
-        return $this->completed;
-    }
-    //funtions within classes are called methods
-    public function description()
-    {
-        return $this->description;
-    }
-
-}
-
+//we use the required task class
 // we create an array of tasks and the new keywords instantiate a class into an objects
 $todo_list = [
     new Task("Go to the store"),
@@ -76,5 +48,11 @@ $todo_list = [
     new Task("Do nothing")
 ];
 //dd($todo_list);
+
+
+$pdo = connectDb();
+
+$task_list = fetchAllTasks($pdo);
+//  dd($task_list);
 //import the view file
 require("index.view.php");
