@@ -2,6 +2,9 @@
 
 require("functions.php");
 require("Task.php");
+
+$database = require("bootstrap.php"); //nueva variable global
+
 $greetings = "Hello you, " . (htmlspecialchars($_GET['name']) ? htmlspecialchars($_GET['name']) : "user");
 
 //trabajando con arreglos
@@ -49,10 +52,18 @@ $todo_list = [
 ];
 //dd($todo_list);
 
+$task_list = $database->selectAll("todos");
 
-$pdo = connectDb();
+//hacer como ejercicio una funcion mapper para transformar el estandar class en una task class
+/**
+ * 
+ */
 
-$task_list = fetchAllTasks($pdo);
+$task_list = array_map(function ($task){
+    $t = new Task($task->description, $task->completed);
+
+    return $t;
+ }, $task_list);
 //  dd($task_list);
 //import the view file
 require("index.view.php");
