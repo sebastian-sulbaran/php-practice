@@ -4,7 +4,8 @@
 //si queremos que sea una variable global, importamos el archivo dentro de una variable
 require("database/Connection.php");
 require("database/QueryBuilder.php");
+$config = require("config.php");
 
 return new QueryBuilder(
-    Connection::make()
+    Connection::make($config['database'])
 );
